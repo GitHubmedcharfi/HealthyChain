@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\Agent.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Agent.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/63</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.5.1;
+import "hardhat/console.sol";
+&nbsp;
+contract Agent {
+&nbsp;
+    struct Patient {
+        string name;
+        uint age;
+        address[] doctorAccessList;
+        uint[] diagnosis;
+        string record;
+    }
+&nbsp;
+    struct Doctor {
+        string name;
+        uint age;
+        address[] patientAccessList;
+    }
+&nbsp;
+    uint creditPool;
+&nbsp;
+    address[] public patientList;
+    address[] public doctorList;
+&nbsp;
+    mapping(address =&gt; Patient) patientInfo;
+    mapping(address =&gt; Doctor) doctorInfo;
+    mapping(address =&gt; address) Empty;
+    mapping(address =&gt; string) patientRecords;
+&nbsp;
+    event AgentAdded(string name, uint age, uint designation);
+    event AccessGranted(address doctor, address patient);
+    event AccessRevoked(address doctor, address patient);
+    event InsuranceClaimProcessed(address doctor, address patient, uint diagnosis, string record);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function add_agent(string memory _name, uint _age, uint _designation, string memory _hash) public returns (string memory) {</span>
+<span class="cstat-no" title="statement not covered" >    address addr = msg.sender;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    require(bytes(_name).length &gt; 0, "Nom invalide ou informations manquantes")</span>;
+<span class="cstat-no" title="statement not covered" >    require(_age &gt; 0, "Age invalide")</span>;  // Vérification de l'âge
+&nbsp;
+    // Désignation: 0 = Patient, 1 = Docteur
+<span class="cstat-no" title="statement not covered" >    if (_designation == 0) {</span>
+        // Vérifier si le patient n'existe pas déjà
+<span class="cstat-no" title="statement not covered" >        require(patientInfo[msg.sender].age == 0, "Patient déjà ajouté")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        Patient memory p;</span>
+        p.name = _name;
+        p.age = _age;
+        p.record = _hash;
+        patientInfo[msg.sender] = p;  // Sauvegarder les informations du patient
+<span class="cstat-no" title="statement not covered" >        patientList.push(addr)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AgentAdded(_name, _age, _designation);</span>
+<span class="cstat-no" title="statement not covered" >        return _name;</span>
+    } else <span class="cstat-no" title="statement not covered" >if (_designation == 1) {</span>
+        // Vérifier si le docteur n'existe pas déjà
+<span class="cstat-no" title="statement not covered" >        require(doctorInfo[addr].age == 0, "Docteur déjà ajouté")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        Doctor storage d = doctorInfo[addr];</span>
+        d.name = _name;
+        d.age = _age;
+<span class="cstat-no" title="statement not covered" >        doctorList.push(addr)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AgentAdded(_name, _age, _designation);</span>
+<span class="cstat-no" title="statement not covered" >        return _name;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >        revert("Désignation invalide")</span>;  // Désignation doit être 0 ou 1
+    }
+}
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function log(string memory message) internal {</span>
+<span class="cstat-no" title="statement not covered" >        console.log("%s", message)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_patient(address addr) view public returns (string memory, uint, uint[] memory, address, string memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return (patientInfo[addr].name, patientInfo[addr].age, patientInfo[addr].diagnosis, Empty[addr], patientInfo[addr].record);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_doctor(address addr) view public returns (string memory, uint) {</span>
+<span class="cstat-no" title="statement not covered" >        return (doctorInfo[addr].name, doctorInfo[addr].age);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_patient_doctor_name(address paddr, address daddr) view public returns (string memory, string memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return (patientInfo[paddr].name, doctorInfo[daddr].name);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function permit_access(address addr) payable public {</span>
+<span class="cstat-no" title="statement not covered" >        require(msg.value == 2 ether, "You must pay exactly 2 ether to grant access")</span>;
+&nbsp;
+        creditPool += 2;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        doctorInfo[addr].patientAccessList.push(msg.sender)</span>;
+<span class="cstat-no" title="statement not covered" >        patientInfo[msg.sender].doctorAccessList.push(addr)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AccessGranted(addr, msg.sender);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function insurance_claim(address paddr, uint _diagnosis, string memory _hash) public {</span>
+<span class="cstat-no" title="statement not covered" >        bool patientFound = false;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint i = 0; i &lt; doctorInfo[msg.sender].patientAccessList.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (doctorInfo[msg.sender].patientAccessList[i] == paddr) {</span>
+<span class="cstat-no" title="statement not covered" >                msg.sender.transfer(2 ether)</span>;
+                creditPool -= 2;
+                patientFound = true;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                emit InsuranceClaimProcessed(msg.sender, paddr, _diagnosis, _hash);</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(patientFound, "Patient not found in doctor's access list")</span>;
+<span class="cstat-no" title="statement not covered" >        set_hash(paddr, _hash)</span>;
+<span class="cstat-no" title="statement not covered" >        remove_patient(paddr, msg.sender)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function remove_element_in_array(address[] storage Array, address addr) internal {</span>
+<span class="cstat-no" title="statement not covered" >        uint del_index = 0;</span>
+<span class="cstat-no" title="statement not covered" >        bool found = false;</span>
+        
+<span class="cstat-no" title="statement not covered" >        for (uint i = 0; i &lt; Array.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (Array[i] == addr) {</span>
+                del_index = i;
+                found = true;
+                break;
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(found, "Element not found in array")</span>;
+&nbsp;
+        // Move the last element to the deleted index and pop it
+        Array[del_index] = Array[Array.length - 1];
+<span class="cstat-no" title="statement not covered" >        Array.pop()</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function remove_patient(address paddr, address daddr) public {</span>
+<span class="cstat-no" title="statement not covered" >        remove_element_in_array(doctorInfo[daddr].patientAccessList, paddr)</span>;
+<span class="cstat-no" title="statement not covered" >        remove_element_in_array(patientInfo[paddr].doctorAccessList, daddr)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AccessRevoked(daddr, paddr);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_accessed_doctorlist_for_patient(address addr) public view returns (address[] memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return patientInfo[addr].doctorAccessList;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_accessed_patientlist_for_doctor(address addr) public view returns (address[] memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return doctorInfo[addr].patientAccessList;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function revoke_access(address daddr) public payable {</span>
+<span class="cstat-no" title="statement not covered" >        remove_patient(msg.sender, daddr)</span>;
+<span class="cstat-no" title="statement not covered" >        msg.sender.transfer(2 ether)</span>;
+        creditPool -= 2;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AccessRevoked(daddr, msg.sender);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_patient_list() public view returns (address[] memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return patientList;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_doctor_list() public view returns (address[] memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return doctorList;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function get_hash(address paddr) public view returns (string memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return patientInfo[paddr].record;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function set_hash(address paddr, string memory _hash) internal {</span>
+        patientInfo[paddr].record = _hash;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 19 2024 16:45:43 GMT+0100 (heure normale d’Afrique de l’Ouest)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

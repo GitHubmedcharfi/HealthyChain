@@ -1,0 +1,24 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "description": "test_blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server",
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^6.13.4",
+    "solc": "^0.8.28",
+    "web3": "^4.16.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.17",
+    "lite-server": "^2.3.0",
+    "solidity-coverage": "^0.8.14"
+  }
+}
